@@ -4,6 +4,7 @@
 # ~/.config/starship.toml
 
 format = """
+$container\
 $hostname\
 $directory\
 $git_branch\
@@ -14,10 +15,6 @@ $rust\
 $docker_context\
 $status\
 $character"""
-
-right_format = """
-$container
-"""
 
 add_newline = false
 
@@ -87,4 +84,4 @@ style = "bold green"
 format = "[$symbol$environment]($style) "
 
 [container]
-format = "[$symbol ($name)]($style) "
+format = '[\[$symbol $name\]]($style) '
