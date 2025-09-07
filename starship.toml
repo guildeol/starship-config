@@ -1,0 +1,90 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# ~/.config/starship.toml
+
+format = """
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+$package\
+$python\
+$rust\
+$docker_context\
+$status\
+$character"""
+
+right_format = """
+$container
+"""
+
+add_newline = false
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vicmd_symbol = "[❮](bold yellow)"
+
+[username]
+show_always = true
+format = "[ $user]($style) "
+style_user = "bold blue"
+style_root = "bold red"
+
+[hostname]
+ssh_only = true
+format = "[ $hostname]($style) "
+style = "bold dimmed cyan"
+
+[directory]
+style = "bold cyan"
+read_only = " "
+truncation_length = 3
+truncation_symbol = "…/"
+format = "[ $path]($style) "
+
+[git_branch]
+symbol = " "
+style = "bold purple"
+format = "[$symbol$branch]($style) "
+
+[git_status]
+format = "([$all_status$ahead_behind]($style)) "
+style = "bold red"
+
+[status]
+disabled = false
+format = "[$symbol$status]($style) "
+symbol = "✘ "
+success_symbol = ""
+style = "bold red"
+
+# Language/runtime modules
+[python]
+symbol = " "
+format = "[$symbol($version )]($style)"
+style = "bold yellow"
+
+[rust]
+symbol = " "
+format = "[$symbol($version )]($style)"
+style = "bold red"
+
+[java]
+symbol = " "
+format = "[$symbol($version )]($style)"
+style = "bold purple"
+
+[docker_context]
+symbol = " "
+style = "bold blue"
+format = "[$symbol$context]($style) "
+
+[conda]
+symbol = " "
+style = "bold green"
+format = "[$symbol$environment]($style) "
+
+[container]
+format = "[$symbol ($name)]($style) "
