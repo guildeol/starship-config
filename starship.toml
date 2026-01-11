@@ -39,7 +39,7 @@ style = "bold cyan"
 read_only = " "
 truncation_length = 3
 truncation_symbol = "…/"
-format = "[ $path]($style) "
+format = "[  $path]($style) "
 
 [git_branch]
 symbol = " "
